@@ -1,5 +1,6 @@
 ---
 - name: install ruby
+  become: yes
   apt:
     state: latest
     name: "{{ item }}"
@@ -9,12 +10,14 @@
   - ruby2.3-dev
 
 - name: install bundler
+  become: yes
   gem:
     state: latest
     name: bundler
     user_install: no
 
 - name: install gems
+  become: yes
   gem:
     state: latest
     name: "{{ item }}"
