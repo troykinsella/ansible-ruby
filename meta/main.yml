@@ -1,0 +1,15 @@
+dependencies: []
+galaxy_info:
+  author: Troy Kinsella
+  description: Install ruby
+  license: MIT
+  min_ansible_version: 1.9
+  github_branch: master
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  galaxy_tags:
+  - packaging
+  - ruby
+  - gems

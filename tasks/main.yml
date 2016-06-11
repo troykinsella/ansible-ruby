@@ -1,0 +1,23 @@
+---
+- name: install ruby
+  apt:
+    state: latest
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+  - ruby2.3
+  - ruby2.3-dev
+
+- name: install bundler
+  gem:
+    state: latest
+    name: bundler
+    user_install: no
+
+- name: install gems
+  gem:
+    state: latest
+    name: "{{ item }}"
+    user_install: no
+  with_items: "{{ ruby_gems }}"
+  when: ruby_gems is iterable
